@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'v1.apps.V1Config',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -124,3 +126,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
 django_heroku.settings(locals())
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
