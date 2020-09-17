@@ -15,6 +15,7 @@ def api_root(request, format=None):
         'posts': reverse('post-list', request=request, format=format)
     })
 
+
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
